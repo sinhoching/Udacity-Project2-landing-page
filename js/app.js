@@ -94,7 +94,26 @@ addSection(sectionThree);
 */
 
 // build the nav
+const navBarItems = [
+    {href: '#', class: 'menu__link', content: 'Home'},
+    {href: '#', class: 'menu__link', content: 'Section 1'},
+    {href: '#', class: 'menu__link', content: 'Section 2'},
+    {href: '#', class: 'menu__link', content: 'Section 3'},
+    ];
 
+function addNavBar(navBar) {
+    const navBarUl = document.getElementById("navbar__list");
+    for (let i = 0; i <= navBarItems.length; i++) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.setAttribute('href', navBarItems[i].href);
+        a.className = 'menu__link';
+        a.textContent = navBarItems[i].content;
+        li.appendChild(a);
+        navBarUl.appendChild(li);
+    }
+};
+addNavBar(navBarItems);
 
 // Add class 'active' to section when near top of viewport
 
