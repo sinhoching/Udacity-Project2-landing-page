@@ -95,7 +95,7 @@ addSection(sectionThree);
 
 // build the nav
 const navBarItems = [
-    {href: '#', class: 'menu__link', content: 'Home'},
+    {href: '#', class: 'menu__link ', content: 'Home'},
     {href: '#', class: 'menu__link', content: 'Section 1'},
     {href: '#', class: 'menu__link', content: 'Section 2'},
     {href: '#', class: 'menu__link', content: 'Section 3'},
@@ -103,7 +103,7 @@ const navBarItems = [
 
 function addNavBar(navBar) {
     const navBarUl = document.getElementById("navbar__list");
-    for (let i = 0; i <= navBarItems.length; i++) {
+    for (let i = 0; i < navBarItems.length; i++) {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.setAttribute('href', navBarItems[i].href);
@@ -116,12 +116,43 @@ function addNavBar(navBar) {
 addNavBar(navBarItems);
 
 // Add class 'active' to section when near top of viewport
+const allLi = document.querySelectorAll('li');
 
+function eventListeningScroll(e) {
+    let topPos = document.scrollingElement.scrollTop;
+    if (topPos < section1.offsetTop) {
+        allLi[0].classList.add("active"); 
+    } else {
+        allLi[0].classList.remove("active");
+    };
+    if (topPos >= section1.offsetTop && topPos < section2.offsetTop) {
+        allLi[1].classList.add("active")
+    } else {
+        allLi[1].classList.remove("active")
+    };
+    if (topPos >= section2.offsetTop && topPos < section3.offsetTop) {
+        allLi[2].classList.add("active"); 
+    } else {
+        allLi[2].classList.remove("active");
+    };
+    if (topPos > section3.offsetTop) {
+        allLi[3].classList.add("active"); 
+    } else {
+        allLi[3].classList.remove("active");
+    };
+}
+    //console.log(document.scrollingElement.scrollTop);
+
+
+//section1.offsetTop = the top of the section
+//sectionElement.offsetTop gives the position of a section in the document.
+
+document.addEventListener('scroll', eventListeningScroll);
 
 // Scroll to anchor ID using scrollTO event
 
 
-/**
+/** 
  * End Main Functions
  * Begin Events
  * 
