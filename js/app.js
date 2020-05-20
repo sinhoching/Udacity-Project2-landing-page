@@ -44,6 +44,7 @@ const sectionThree = {
     p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'
 };
 
+const sectionsData = [sectionOne, sectionTwo, sectionThree];
 
 /**
  * End Global Variables
@@ -82,10 +83,12 @@ function addSection(section) {
     document.body.append(newSection);
 }
 
-addSection(sectionOne);
-addSection(sectionTwo);
-addSection(sectionThree);
-
+function addSections (sections) {
+    for (let i = 0; i < sections.length; i++) {
+        addSection(sections[i]);
+    }
+}
+addSections(sectionsData);
 
 /**
  * End Helper Functions
@@ -95,10 +98,10 @@ addSection(sectionThree);
 
 // build the nav
 const navBarItems = [
-    {href: '#', class: 'menu__link ', content: 'Home'},
-    {href: '#', class: 'menu__link', content: 'Section 1'},
-    {href: '#', class: 'menu__link', content: 'Section 2'},
-    {href: '#', class: 'menu__link', content: 'Section 3'},
+    {class: 'menu__link ', content: 'Home'},
+    {class: 'menu__link', content: 'Section 1'},
+    {class: 'menu__link', content: 'Section 2'},
+    {class: 'menu__link', content: 'Section 3'},
     ];
 
 function addNavBar(navBar) {
@@ -106,7 +109,6 @@ function addNavBar(navBar) {
     for (let i = 0; i < navBarItems.length; i++) {
         const li = document.createElement('li');
         const a = document.createElement('a');
-        a.setAttribute('href', navBarItems[i].href);
         a.className = 'menu__link';
         a.textContent = navBarItems[i].content;
         li.appendChild(a);
@@ -120,6 +122,7 @@ const allLi = document.querySelectorAll('li');
 
 function eventListeningScroll(e) {
     let topPos = document.scrollingElement.scrollTop;
+    topPos += 300;
     if (topPos < section1.offsetTop) {
         allLi[0].classList.add("active"); 
     } else {
@@ -140,17 +143,19 @@ function eventListeningScroll(e) {
     } else {
         allLi[3].classList.remove("active");
     };
-}
-    //console.log(document.scrollingElement.scrollTop);
-
-
-//section1.offsetTop = the top of the section
-//sectionElement.offsetTop gives the position of a section in the document.
+};
 
 document.addEventListener('scroll', eventListeningScroll);
 
 // Scroll to anchor ID using scrollTO event
 
+const allSection = [document.querySelector('header'), ...document.querySelectorAll('section')];
+console.log(allSection);
+for (let i = 0; i < allLi.length; i++) {
+    allLi[i].addEventListener('click', function() {
+        window.scrollTo(0, allSection[i].offsetTop);
+    });
+};
 
 /** 
  * End Main Functions
