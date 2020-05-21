@@ -22,35 +22,38 @@ const headerData = {
     title: 'Landing Page'
 };
 
-const sectionOne = {
-    id: 'section1',
-    dataNav: 'section 1',
-    h2Content: 'Section 1',
-    p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
-    p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'
-};
-const sectionTwo = {
-    id: 'section2',
-    dataNav: 'section 2',
-    h2Content: 'Section 2',
-    p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
-    p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'
-};
-const sectionThree = {
-    id: 'section3',
-    dataNav: 'section 3',
-    h2Content: 'Section 3',
-    p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
-    p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'
-};
+const sectionData = [
+    {
+        id: 'section1', dataNav: 'section 1', h2Content: 'Section 1',
+        p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
+        p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'
+    },
+    {
+        id: 'section2', dataNav: 'section 2', h2Content: 'Section 2',
+        p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
+        p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'
+    },
+    {
+        id: 'section3', dataNav: 'section 3', h2Content: 'Section 3',
+        p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
+        p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'
+    }];
 
-const sectionsData = [sectionOne, sectionTwo, sectionThree];
+    const navBarItems = [
+        { class: 'menu__link ', content: 'Home' },
+        { class: 'menu__link', content: 'Section 1' },
+        { class: 'menu__link', content: 'Section 2' },
+        { class: 'menu__link', content: 'Section 3' },
+    ];
+
+    //console.log(allSection);
 
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
+
 function addHeader(header) {
     const mainHeading = document.querySelector('main');
     const newHeader = document.createElement('header');
@@ -83,12 +86,12 @@ function addSection(section) {
     document.body.append(newSection);
 }
 
-function addSections (sections) {
+function addSections(sections) {
     for (let i = 0; i < sections.length; i++) {
         addSection(sections[i]);
-    }
+    };
 }
-addSections(sectionsData);
+addSections(sectionData);
 
 /**
  * End Helper Functions
@@ -97,12 +100,6 @@ addSections(sectionsData);
 */
 
 // build the nav
-const navBarItems = [
-    {class: 'menu__link ', content: 'Home'},
-    {class: 'menu__link', content: 'Section 1'},
-    {class: 'menu__link', content: 'Section 2'},
-    {class: 'menu__link', content: 'Section 3'},
-    ];
 
 function addNavBar(navBar) {
     const navBarUl = document.getElementById("navbar__list");
@@ -117,14 +114,15 @@ function addNavBar(navBar) {
 };
 addNavBar(navBarItems);
 
-// Add class 'active' to section when near top of viewport
 const allLi = document.querySelectorAll('li');
+
+// Add class 'active' to section when near top of viewport
 
 function eventListeningScroll(e) {
     let topPos = document.scrollingElement.scrollTop;
     topPos += 300;
     if (topPos < section1.offsetTop) {
-        allLi[0].classList.add("active"); 
+        allLi[0].classList.add("active");
     } else {
         allLi[0].classList.remove("active");
     };
@@ -134,12 +132,12 @@ function eventListeningScroll(e) {
         allLi[1].classList.remove("active")
     };
     if (topPos >= section2.offsetTop && topPos < section3.offsetTop) {
-        allLi[2].classList.add("active"); 
+        allLi[2].classList.add("active");
     } else {
         allLi[2].classList.remove("active");
     };
     if (topPos > section3.offsetTop) {
-        allLi[3].classList.add("active"); 
+        allLi[3].classList.add("active");
     } else {
         allLi[3].classList.remove("active");
     };
@@ -148,19 +146,18 @@ function eventListeningScroll(e) {
 document.addEventListener('scroll', eventListeningScroll);
 
 // Scroll to anchor ID using scrollTO event
-
 const allSection = [document.querySelector('header'), ...document.querySelectorAll('section')];
-console.log(allSection);
+
 for (let i = 0; i < allLi.length; i++) {
-    allLi[i].addEventListener('click', function() {
+    allLi[i].addEventListener('click', function () {
         window.scrollTo(0, allSection[i].offsetTop);
     });
 };
 
-/** 
+/**
  * End Main Functions
  * Begin Events
- * 
+ *
 */
 
 // Build menu 
