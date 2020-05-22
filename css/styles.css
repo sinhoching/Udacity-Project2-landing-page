@@ -49,8 +49,7 @@ p {
 main {
     margin: 10vh 1em 10vh;
 }
-
-.main-hero {
+#main-hero {
     min-height: 40vh;
     padding-top: 3em;
 }
@@ -210,6 +209,13 @@ section.your-active-class .landing__container::before {
 section.your-active-class .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
+}
+
+section h2 {
+    transition: all 0.5s ease;
+}
+section.your-active-class h2 {
+    font-size: 4em;
 }
 
 /* Section Active Styles Keyframe Animations */
