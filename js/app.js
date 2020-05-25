@@ -40,6 +40,12 @@ const contentData = [
         p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
         p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.',
         class: 'menu__link', navBarName: 'Section 3'
+    },
+    {
+        id: 'section4', dataNav: 'section 4', title: 'Section 4',
+        p1Content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
+        p2Content: 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.',
+        class: 'menu__link', navBarName: 'Section 4'
     }];
 
 /**
@@ -145,7 +151,16 @@ const navBar = document.getElementById('navbar__list');
 
 for (let i = 0; i < allLi.length; i++) {
     allLi[i].addEventListener('click', function () {
-        window.scrollTo(0, allSection[i].offsetTop - navBar.offsetHeight);
+        if (i == 0) {
+            //<header> has fixed position, so cannot use scrollIntoView
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+              });
+        } else {
+            allSection[i].scrollIntoView({behavior: "smooth"});
+        }
     });
 };
 
@@ -161,4 +176,36 @@ for (let i = 0; i < allLi.length; i++) {
 
 // Set sections as active
 
+//Create a Scroll To Top button
+function addButton() {
+const body = document.querySelector('body');
+const newButton = document.createElement('button');
+newButton.textContent = "Top";
+newButton.setAttribute('onclick', 'topFunction()');
+newButton.setAttribute('id', 'topBtn');
+newButton.setAttribute('title', 'Go to top');
+body.appendChild(newButton);
+}
 
+addButton();
+
+//scroll to top button appear when user scrolls down 20px from the top
+const topButton = document.getElementById('topBtn');
+window.onscroll = function () {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topButton.style.display = 'block';
+    } else {
+        topButton.style.display = 'none';
+    }
+}
+
+//scroll to top when user clicks on the button
+function topFunction() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+}
